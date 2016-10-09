@@ -11,6 +11,7 @@ import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app/index';
 import { AppShellModule } from '@angular/app-shell';
+import { MaterialModule } from '@angular/material';
 // import { RouterModule } from '@angular/router';
 // import { appRoutes } from './app/app.routing';
 
@@ -29,6 +30,7 @@ import { AppShellModule } from '@angular/app-shell';
      */
     UniversalModule,
     FormsModule,
+    MaterialModule.forRoot(),
     AppShellModule.runtime()
     /**
      * using routes
