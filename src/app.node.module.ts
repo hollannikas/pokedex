@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app/index';
+import { AppShellModule } from '@angular/app-shell';
 // import { RouterModule } from '@angular/router';
 // import { appRoutes } from './app/app.routing';
 
@@ -27,7 +28,8 @@ import { AppComponent } from './app/index';
      * NodeModule, NodeHttpModule, NodeJsonpModule are included
      */
     UniversalModule,
-    FormsModule
+    FormsModule,
+    AppShellModule.prerender()
     /**
      * using routes
      */
