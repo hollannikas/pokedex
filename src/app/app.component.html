@@ -1,21 +1,22 @@
 <div>
   <md-toolbar color="primary">
-    <span>{{title}}</span>
+    <div *shellNoRender>
+      <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon>menu</md-icon>
+      </button>
+      <md-menu x-position="after" #menu="mdMenu">
+        <button md-menu-item routerLink="/" routerLinkActive="active">Home</button>
+        <button md-menu-item routerLink="/pokemon">Pokémon</button>
+        <button md-menu-item routerLink="/help">Help</button>
+      </md-menu>
+    </div>
     <span class="fill-remaining-space"></span>
-    <span>I choose you!</span>
+    <span>I choose you!™</span>
   </md-toolbar>
   <md-card>
     <md-progress-bar mode="indeterminate" *shellRender></md-progress-bar>
     <div *shellNoRender>
-      <md-card-header>
-          <img md-card-avatar src="../assets/images/img.png">
-          <md-card-title>Goomy</md-card-title>
-          <md-card-subtitle>The weakest Dragon-type Pokémon, it lives in damp, shady places, so its body doesn’t dry out.</md-card-subtitle>
-      </md-card-header>
-      <img md-card-lg-image src="../assets/images/img.png">
-      <md-card-content>
-          <p>Goomy is a Dragon type Pokémon introduced in Generation 6. It is known as the Soft Tissue Pokémon. Goomy is covered in a slimy membrane that makes any punches or kicks slide off it harmlessly.</p>
-      </md-card-content>
+      <router-outlet></router-outlet>
     </div>
   </md-card>
 </div>

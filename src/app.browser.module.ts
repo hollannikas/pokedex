@@ -9,11 +9,16 @@
 import { NgModule } from '@angular/core';
 import { UniversalModule } from 'angular2-universal';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app/index';
+import { 
+  AppComponent, 
+  PokemonComponent,
+  HomeComponent,
+  HelpComponent
+} from './app/index';
 import { AppShellModule } from '@angular/app-shell';
 import { MaterialModule } from '@angular/material';
-// import { RouterModule } from '@angular/router';
-// import { appRoutes } from './app/app.routing';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app/app.routing';
 
 /**
  * Top-level NgModule "container"
@@ -22,7 +27,12 @@ import { MaterialModule } from '@angular/material';
   /** Root App Component */
   bootstrap: [ AppComponent ],
   /** Our Components */
-  declarations: [ AppComponent ],
+  declarations: [ 
+    AppComponent, 
+    PokemonComponent,
+    HomeComponent,
+    HelpComponent
+    ],
   imports: [
     /**
      * NOTE: Needs to be your first import (!)
@@ -31,11 +41,11 @@ import { MaterialModule } from '@angular/material';
     UniversalModule,
     FormsModule,
     MaterialModule.forRoot(),
-    AppShellModule.runtime()
+    AppShellModule.runtime(),
     /**
      * using routes
      */
-    // RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes)
   ]
 })
 export class AppModule {
