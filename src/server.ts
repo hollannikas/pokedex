@@ -57,9 +57,13 @@ function ngApp(req: any, res: any) {
 /**
  * use universal for specific routes
  */
+
+const fs = require('fs');
 app.get('/', ngApp);
 app.get('/about', ngApp);
 app.get('/about/*', ngApp);
+app.use('/assets/', express.static('assets'));
+app.use('/icons/', express.static('icons'));
 
 /**
  * if you want to use universal for all routes, you can use the '*' wildcard
